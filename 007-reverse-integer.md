@@ -2,6 +2,8 @@
 
 > Given a 32-bit signed integer, reverse digits of an integer.
 
+ 
+
 ### Solution
 
 You don't need an extra array to store values, just pop and push in the same loop.
@@ -17,13 +19,16 @@ class Solution {
         while (x != 0) {
             int pop = x % 10;
             x = x / 10; // Note that -0 / 10 = 0;
-            if (res > Integer.MAX_VALUE / 10 || res == Integer.MAX_VALUE / 10 && pop > 7 ) return 0;
-            if (res < Integer.MIN_VALUE / 10 || res == Integer.MIN_VALUE / 10 && pop < -8) return 0;
+            //+ handle overflow here
             res = res * 10 + pop;
         }
         return res;
     }
 }
+
+// handle overflow
+if (res > Integer.MAX_VALUE / 10 || res == Integer.MAX_VALUE / 10 && pop > 7 ) return 0;
+if (res < Integer.MIN_VALUE / 10 || res == Integer.MIN_VALUE / 10 && pop < -8) return 0;
 ```
 
 **Follow Up**

@@ -7,26 +7,20 @@
 ### Solution
 
 ```java
-// 17.45%
+// 48.54%
 
 class Solution {
     public int searchInsert(int[] nums, int target) {
-        // Solution 1: linear time
-        // Solution 2: binary search - O(logn)
-        int left = 0;
-        int right = nums.length; // cannot be nums.length - 1
-        // failed at [1,3,5,6], 7 (output: 4)
-        
+        int left = 0, right = nums.length;
         while (left < right) {
-            int mid = (left + right) / 2;
+            int mid = (left + right) >> 1;
             if (nums[mid] < target) {
                 left = mid + 1;
             } else {
                 right = mid;
             }
         }
-        
-        return right;
+        return left;
     }
 }
 ```

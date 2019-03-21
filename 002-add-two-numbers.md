@@ -4,8 +4,6 @@ You are given two **non-empty** linked lists representing two non-negative integ
 
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-
-
 ### Solution
 
 注意：

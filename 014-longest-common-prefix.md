@@ -2,7 +2,11 @@
 
 > Write a function to find the longest common prefix string amongst an array of strings.
 
+
+
 ### Solution
+
+一开始把第一个string设为prefix，然后后面的一个一个去比。
 
 Draft
 
